@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
-import { addProduct } from "@/app/actions/auth/addproduct";
+
 import Swal from "sweetalert2";
 
 export default function AddProductForm() {
@@ -89,12 +89,20 @@ export default function AddProductForm() {
     }
 
     try {
-      const result = await addProduct(data);
+      const response = await fetch("/api/products", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-      if (result.acknowledged) {
+      const result = await response.json();
+
+      if (response.ok) {
         Swal.fire({
           title: "Success!",
-          text: "Product added successfully!",
+          text: result.message || "Product added successfully!",
           icon: "success",
           confirmButtonText: "OK",
           timer: 1500,
@@ -102,13 +110,14 @@ export default function AddProductForm() {
       } else {
         Swal.fire({
           title: "Error!",
-          text: "Failed to add product.",
+          text: result.message || "Failed to add product.",
           icon: "error",
           confirmButtonText: "OK",
           timer: 1500,
         });
       }
     } catch (error) {
+      console.error("Error adding product:", error);
       Swal.fire({
         title: "Error!",
         text: "An error occurred while adding the product. Please try again.",
