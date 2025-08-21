@@ -1,0 +1,31 @@
+{
+  "name": "scic-task",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "bcrypt": "^6.0.0",
+    "daisyui": "^5.0.50",
+    "mongodb": "^6.18.0",
+    "next": "15.5.0",
+    "next-auth": "^4.24.11",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-hook-form": "^7.62.0",
+    "react-icons": "^5.5.0",
+    "sweetalert2": "^11.22.4"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4.1.12",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.0",
+    "tailwindcss": "^4.1.12"
+  }
+}
