@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
 
             <main className="flex-1 pt-10">
               <div className="">
-                <div className=" my-10">{children}</div>
+                <div >{children}</div>
               </div>
             </main>
 

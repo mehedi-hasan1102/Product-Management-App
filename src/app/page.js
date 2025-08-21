@@ -1,9 +1,11 @@
-import Image from "next/image";
+import Hero from "@/components/Hero";
+import ProductHighlights from "@/components/ProductHighlights";
 
 export default function Home() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold">Hello World</h1>
-    </div>
+    <main>
+      <Hero />
+      <ProductHighlights />
+    </main>
   );
 }
