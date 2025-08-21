@@ -1,13 +1,14 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <div className="footer footer-horizontal footer-center bg-gradient-to-br from-emerald-50 to-cyan-50 text-base-content rounded p-10 border-t border-black">
       <nav className="grid grid-flow-col gap-4">
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
+        <Link href="/" className="link link-hover">Home</Link>
+        <Link href="/products" className="link link-hover">Products</Link>
+        <Link href="/about" className="link link-hover">About</Link>
+        <Link href="/contact" className="link link-hover">Contact</Link>
       </nav>
       <nav>
         <div className="grid grid-flow-col gap-4">
