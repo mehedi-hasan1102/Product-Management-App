@@ -7,8 +7,12 @@ import { FaCloudUploadAlt } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { addProduct } from "@/app/actions/auth/addproduct";
 import Swal from "sweetalert2";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function AddProductForm() {
+  const { data: session } = useSession();
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -85,6 +89,9 @@ export default function AddProductForm() {
       }
     }
 
+    // Add createdBy field
+    data.createdBy = session?.user?.email;
+
     try {
       const result = await addProduct(data);
 
@@ -96,6 +103,8 @@ export default function AddProductForm() {
           confirmButtonText: "OK",
           timer: 1500,
         });
+        router.push("/dashboard"); // Navigate back to dashboard
+        router.refresh(); // Re-fetch data on dashboard page
       } else {
         Swal.fire({
           title: "Error!",

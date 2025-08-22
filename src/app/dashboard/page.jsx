@@ -28,7 +28,8 @@ const DashboardPage = () => {
       try {
         const res = await fetch("/api/products");
         if (!res.ok) {
-          throw new Error("Failed to fetch products");
+          const errorData = await res.json();
+          throw new Error(`Failed to fetch products: ${res.status} ${res.statusText} - ${errorData.message || 'Unknown error'}`);
         }
         const data = await res.json();
         setProducts(data);
@@ -97,7 +98,7 @@ const DashboardPage = () => {
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           <div className="bg-gradient-to-br from-emerald-50 to-cyan-50 p-6 rounded-2xl shadow-md border border-emerald-100">
-            <h2 className="text-sm font-medium text-gray-600">Total Products</h2>
+            <h2 className="text-sm font-medium text-gray-600">My Total Products</h2>
             <p className="text-4xl font-extrabold text-emerald-600 mt-2">
               {myProducts.length}
             </p>

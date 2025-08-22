@@ -16,7 +16,10 @@ const MyProductsPage = () => {
     const fetchProducts = async () => {
       try {
         const res = await fetch("/api/products");
-        if (!res.ok) throw new Error("Failed to fetch products");
+        if (!res.ok) {
+          const errorData = await res.json();
+          throw new Error(`Failed to fetch products: ${res.status} ${res.statusText} - ${errorData.message || 'Unknown error'}`);
+        }
         const data = await res.json();
         setProducts(data);
       } catch (err) {
@@ -49,9 +52,16 @@ const MyProductsPage = () => {
   );
 
   const handleProductDeleted = (deletedProductId) => {
-    setProducts((prev) =>
-      prev.filter((product) => product._id !== deletedProductId)
-    );
+    console.log("Attempting to delete product with ID:", deletedProductId);
+    setProducts((prevProducts) => {
+      console.log("Previous products state:", prevProducts);
+      const updatedProducts = prevProducts.filter((product) => {
+        console.log(`Comparing ${product._id} with ${deletedProductId}`);
+        return product._id !== deletedProductId;
+      });
+      console.log("Updated products state after filter:", updatedProducts);
+      return updatedProducts;
+    });
   };
 
   return (
