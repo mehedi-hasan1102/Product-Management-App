@@ -120,7 +120,7 @@ function Navbar() {
                 onClick={() => signOut()}
                 className={`px-4 py-2 text-sm font-medium rounded-lg shadow-sm transition-colors duration-200 ${
                   solidNavbar
-                    ? "text-white bg-sky-600 border border-sky-600 hover:bg-white hover:text-sky-600"
+                    ? "text-white bg-gradient-to-r from-emerald-500 to-cyan-600  hover:opacity-90 transition"
                     : "text-white bg-transparent border border-white hover:bg-white hover:text-black"
                 }`}
               >
@@ -133,7 +133,7 @@ function Navbar() {
                 href="/login"
                 className={`px-4 py-2 text-sm font-medium rounded-lg shadow-sm transition-colors duration-200 ${
                   solidNavbar
-                    ? "text-white bg-sky-600 border border-sky-600 hover:bg-white hover:text-sky-600"
+                    ? "text-white bg-gradient-to-r from-emerald-500 to-cyan-600  hover:opacity-90 transition"
                     : "text-white border border-white bg-transparent hover:bg-white hover:text-black"
                 }`}
               >
