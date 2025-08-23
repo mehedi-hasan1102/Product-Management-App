@@ -46,7 +46,8 @@ export default function LoginForm() {
     }
   };
   return (
-    <form onSubmit={handleLogin} className="flex flex-col gap-4 p-8">
+    
+    <form onSubmit={handleLogin} className="flex flex-col gap-4 ">
       <label
         htmlFor="email"
         className="text-gray-700 font-medium text-sm sm:text-base"

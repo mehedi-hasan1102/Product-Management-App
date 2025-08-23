@@ -14,7 +14,8 @@ export default function RegisterForm() {
     await registerUser({ name, email, password });
   };
   return (
-    <form onSubmit={handleRegister} className="flex flex-col gap-4 p-8">
+    
+    <form onSubmit={handleRegister} className="flex flex-col gap-4 ">
       <label
         htmlFor="name"
         className="text-gray-700 font-medium text-sm sm:text-base"
