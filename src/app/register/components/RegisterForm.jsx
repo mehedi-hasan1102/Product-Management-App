@@ -58,7 +58,7 @@ export default function RegisterForm() {
 
       <button
         type="submit"
-        className="mt-4 bg-blue-500 text-white p-3 sm:p-4 rounded hover:bg-blue-600 transition text-sm sm:text-base"
+        className="mt-4 t p-3 sm:p-4 rounded text-white bg-gradient-to-r from-emerald-500 to-cyan-600  hover:opacity-90 transition  text-sm sm:text-base"
       >
         Register
       </button>

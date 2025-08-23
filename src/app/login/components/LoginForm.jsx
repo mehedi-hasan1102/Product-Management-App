@@ -77,7 +77,7 @@ export default function LoginForm() {
 
       <button
         type="submit"
-        className="mt-4 bg-blue-500 text-white p-3 sm:p-4 rounded hover:bg-blue-600 transition text-sm sm:text-base"
+        className="text-white bg-gradient-to-r from-emerald-500 to-cyan-600  hover:opacity-90 transition mt-4  p-3 sm:p-4 rounded  text-sm sm:text-base"
       >
         Login
       </button>
