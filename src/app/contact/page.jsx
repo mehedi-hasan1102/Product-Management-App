@@ -7,7 +7,7 @@ const ContactPage = () => {
           Have a question or want to work with us? Feel free to reach out!
         </p>
         <p className="text-md text-gray-500">
-          You can reach us at <a href="mailto:info@example.com" className="text-blue-500 hover:underline">info@example.com</a>
+          You can reach us at <a href="mailto:info@productly.com" className="text-blue-500 hover:underline">info@productly.com</a>
         </p>
       </div>
     </div>

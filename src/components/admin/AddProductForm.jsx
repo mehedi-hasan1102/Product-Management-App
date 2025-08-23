@@ -78,7 +78,7 @@ export default function AddProductForm() {
       formData.append("image", image);
       try {
         const response = await axios.post(
-          `https://api.imgbb.com/1/upload?key=9683ba99474011560739e696292fa9e0`,
+          `https://api.imgbb.com/1/upload?key=a3b895b2d5cf4a081b5b61c3d500cc0c`,
           formData
         );
         data.image = response.data.data.url;
